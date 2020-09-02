@@ -7,8 +7,8 @@ MAX_SENTENCES=8     # Batch size.
 
 CLR_PATH=checkpoints/clr_multifield_any
 mkdir -p $CLR_PATH
-rm -f $CLR_PATH/checkpoint_best.pt
-cp checkpoints/pretrain/checkpoint_best.pt $CLR_PATH/
+rm -f $CLR_PATH/checkpoint_last.pt
+cp checkpoints/pretrain/checkpoint_last.pt $CLR_PATH/
 
 CUDA_VISIBLE_DEVICES=0 python train.py data-bin/clr_multifield_any \
   --max-positions 512 \
@@ -31,4 +31,4 @@ CUDA_VISIBLE_DEVICES=0 python train.py data-bin/clr_multifield_any \
   --pooler-activation-fn relu \
   --truncate-sequence \
   --last-layer -3 \
-  --restore-file $CLR_PATH/checkpoint_best.pt | tee result/clr_multifield_any
+  --restore-file $CLR_PATH/checkpoint_last.pt | tee result/clr_multifield_any
