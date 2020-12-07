@@ -3,7 +3,7 @@
 TOTAL_UPDATES=30000 # Total number of training steps
 WARMUP_UPDATES=100  # Warmup the learning rate over this many updates
 LR=1e-4             # Peak LR for polynomial LR scheduler.
-MAX_SENTENCES=8     # Batch size.
+MAX_SENTENCES=4     # Batch size.
 
 CLR_PATH=checkpoints/clr_multifield_any
 mkdir -p $CLR_PATH
@@ -25,7 +25,7 @@ CUDA_VISIBLE_DEVICES=0 python train.py data-bin/clr_multifield_any \
   --lr-scheduler polynomial_decay --lr $LR --total-num-update $TOTAL_UPDATES --max-update $TOTAL_UPDATES --warmup-updates $WARMUP_UPDATES \
   --best-checkpoint-metric AUC --maximize-best-checkpoint-metric \
   --find-unused-parameters \
-  --no-epoch-checkpoints --update-freq 32 --log-format=json --log-interval 2 \
+  --no-epoch-checkpoints --update-freq 8 --log-format=json --log-interval 10 \
   --save-dir $CLR_PATH \
   --memory-efficient-fp16 \
   --pooler-activation-fn relu \
