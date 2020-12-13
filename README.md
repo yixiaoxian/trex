@@ -50,6 +50,10 @@ To finetune the model, run:
 
 The scripts loads the pretrained weight parameters from `checkpoints/pretrain/` and finetunes the model.
 
+## Dataset
+
+We put our dataset in the anonymized [link](https://drive.google.com/drive/folders/1FXlrGiZkch9bnAxlrm43IhYGC3r5NveA?usp=sharing).
+
 ## References
 
 [1] Liu, Yinhan, et al. "Roberta: A robustly optimized bert pretraining approach." arXiv preprint arXiv:1907.11692 (2019).

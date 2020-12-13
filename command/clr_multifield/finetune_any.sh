@@ -2,7 +2,7 @@
 
 TOTAL_UPDATES=30000 # Total number of training steps
 WARMUP_UPDATES=100  # Warmup the learning rate over this many updates
-LR=1e-4             # Peak LR for polynomial LR scheduler.
+LR=1e-5             # Peak LR for polynomial LR scheduler.
 MAX_SENTENCES=4     # Batch size.
 
 CLR_PATH=checkpoints/clr_multifield_any
